@@ -1,0 +1,140 @@
+ext {
+    // Core Language
+    kotlinVersion = "1.2.71"
+    kotlin = [
+            plugin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
+            stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            reflect: "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
+            test   : "org.jetbrains.kotlin:kotlin-test-junit$kotlinVersion",
+    ]
+
+    // Android Project Config
+    androidGradlePluginVersion = "3.2.0"
+    android = [
+            plugin: "com.android.tools.build:gradle:$androidGradlePluginVersion",
+    ]
+
+    // AndroidX Support
+    androidxMultidexVersion = "1.0.3"
+    androidxSupportVersion = "28.0.0-rc01"
+    androidxConstraintLayoutVersion = "1.1.2"
+    androidx = [
+            multidex          : "com.android.support:multidex:$androidxMultidexVersion",
+            appcompat         : "com.android.support:appcompat-v7:$androidxSupportVersion",
+            recyclerview      : "com.android.support:recyclerview-v7:$androidxSupportVersion",
+            supportAnnotations: "com.android.support:support-annotations:$androidxSupportVersion",
+            supportDesign     : "com.android.support:design:$androidxSupportVersion",
+            constraintLayout  : "com.android.support.constraint:constraint-layout:$androidxConstraintLayoutVersion",
+    ]
+
+    // AndroidX Lifecycle
+    androidxLifecycleVersion = "1.1.1"
+    androidxLifecycle = [
+            core    : "android.arch.lifecycle:extensions:$androidxLifecycleVersion",
+            compiler: "android.arch.lifecycle:compiler:$androidxLifecycleVersion",
+    ]
+
+    // ReactiveX
+    rxJavaVersion = "2.2.2"
+    rxKotlinVersion = "2.2.0"
+    rxAndroidVersion = "2.1.0"
+    rxTraceurVersion = "1.0.1"
+    rx = [
+            java   : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            kotlin : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            android: "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            logger : "com.tspoon.traceur:traceur:$rxTraceurVersion",
+    ]
+
+    // Dependency Injection
+    jsr250Version = "1.0"
+    daggerVersion = "2.16"
+    dagger = [
+            jsr250         : "javax.annotation:jsr250-api:$jsr250Version",
+            core           : "com.google.dagger:dagger:$daggerVersion",
+            android        : "com.google.dagger:dagger-android-support:$daggerVersion",
+            compiler       : "com.google.dagger:dagger-compiler:$daggerVersion",
+            androidCompiler: "com.google.dagger:dagger-android-processor:$daggerVersion",
+    ]
+
+    // JSON
+    moshiVersion = "1.6.0"
+    json = [
+            core    : "com.squareup.moshi:moshi:$moshiVersion",
+            compiler: "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion",
+    ]
+
+    // HTTP Networking
+    okhttpVersion = "3.10.0"
+    retrofitVersion = "2.4.0"
+    http = [
+            client           : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            logging          : "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            rest             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            restJsonConverter: "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
+            restRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+    ]
+
+    timberVersion = "4.7.1"
+    timber = [
+            core: "com.jakewharton.timber:timber:$timberVersion",
+    ]
+
+    leakCanaryVersion = "1.6.1"
+    leakCanary = [
+            core: "com.squareup.leakcanary:leakcanary-support-fragment:$leakCanaryVersion",
+            noOp: "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion",
+
+    ]
+
+    // Fabric.io
+    fabricGradlePluginVersion = "1.25.4"
+    fabricCrashlyticsVersion = "2.9.5"
+    fabric = [
+            plugin     : "io.fabric.tools:gradle:$fabricGradlePluginVersion",
+            crashlytics: "com.crashlytics.sdk.android:crashlytics:$fabricCrashlyticsVersion@aar",
+
+    ]
+
+    // Image download and cache
+    glideVersion = "4.8.0"
+    glide = [
+            core    : "com.github.bumptech.glide:glide:$glideVersion",
+            compiler: "com.github.bumptech.glide:compiler:$glideVersion",
+    ]
+
+    // Test Coverage
+    jacocoVersion = "0.8.2"
+    vanniktechJacocoPluginVersion = "0.12.0"
+    jacoco = [
+            plugin: "com.vanniktech:gradle-android-junit-jacoco-plugin:$vanniktechJacocoPluginVersion",
+    ]
+
+    // Mocks
+    mockitoVersion = "2.22.0"
+    mockitoKotlinVersion = "1.6.0"
+    mockWebServerVersion = "3.11.0"
+    mock = [
+            mockito      : "org.mockito:mockito-inline:$mockitoVersion",
+            mockitoKotlin: "org.mockito:mockito-inline:$mockitoKotlinVersion",
+            mockWebServer: "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion",
+    ]
+
+    // Unit Test Engine
+    robolectricVersion = "3.8"
+    kotlinTestVersion = "3.1.10"
+    testEngine = [
+            kotlinTest : "io.kotlintest:kotlintest-runner-junit5:$kotlinTestVersion",
+            robolectric: "org.robolectric:robolectric:$robolectricVersion",
+    ]
+
+    // Testing
+    runnerVersion = "1.0.2"
+    rulesVersion = "1.0.2"
+    espressoVersion = "3.0.2"
+    testLibraries = [
+            runner      : "com.android.support.test:runner:$runnerVersion",
+            rules       : "com.android.support.test:rules:$rulesVersion",
+            espressoCore: "com.android.support.test.espresso:espresso-core:$espressoVersion",
+    ]
+}

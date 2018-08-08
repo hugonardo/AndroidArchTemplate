@@ -1,0 +1,35 @@
+buildscript {
+    apply from: rootProject.file("buildsystem/dependencies.gradle")
+    apply from: rootProject.file("buildsystem/environment.gradle")
+
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        def dependencies = rootProject.ext
+
+        classpath dependencies.android.plugin
+        classpath dependencies.kotlin.plugin
+        classpath dependencies.fabric.plugin
+        classpath dependencies.jacoco.plugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+apply from: rootProject.file("buildsystem/quality.gradle")

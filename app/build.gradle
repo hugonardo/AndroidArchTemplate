@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: rootProject.file('buildsystem/fabric.gradle')
+
+android {
+    def applicationConfig = rootProject.ext.applicationConfig
+
+    compileSdkVersion applicationConfig.compileSdkVersion
+
+    defaultConfig {
+        applicationId applicationConfig.id
+        minSdkVersion applicationConfig.minSdkVersion
+        targetSdkVersion applicationConfig.targetSdkVersion
+
+        versionCode applicationConfig.versionCode
+        versionName applicationConfig.versionName
+
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+            storePassword "android"
+            storeFile rootProject.file("buildsystem/debug.keystore")
+        }
+        release {
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+            storePassword "android"
+            storeFile rootProject.file("buildsystem/debug.keystore")
+        }
+    }
+
+    buildTypes {
+        defaultConfig {
+            debuggable true
+            minifyEnabled false
+            matchingFallbacks = ['release']
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debug
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            ext.enableCrashlytics = false
+            ext.alwaysUpdateBuildId = false
+        }
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+            all {
+                jvmArgs '-noverify'
+            }
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext
+
+    // Core Product
+    implementation project(":domain")
+    implementation project(":data")
+    implementation project(":presentation")
+    implementation project(":providers:api")
+
+    // Core Language
+    implementation dependencies.kotlin.stdlib
+
+    // AndroidX Support
+    implementation dependencies.androidx.multidex
+    implementation dependencies.androidx.appcompat
+
+    // Dependence injection
+    compileOnly dependencies.dagger.jsr250
+    implementation dependencies.dagger.core
+    implementation dependencies.dagger.android
+    kapt dependencies.dagger.compiler
+    kapt dependencies.dagger.androidCompiler
+
+    // Development and debugging
+    implementation dependencies.timber.core
+    implementation dependencies.rx.logger
+    debugImplementation dependencies.leakCanary.core
+    releaseImplementation dependencies.leakCanary.noOp
+
+    // Unit Tests
+    testImplementation dependencies.testEngine.kotlinTest
+    testImplementation dependencies.mock.mockito
+    testImplementation dependencies.mock.mockitoKotlin
+}

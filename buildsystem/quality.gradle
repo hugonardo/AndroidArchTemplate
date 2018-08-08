@@ -1,0 +1,26 @@
+apply plugin: "com.vanniktech.android.junit.jacoco"
+
+junitJacoco {
+    jacocoVersion = rootProject.ext.jacocoVersion
+    includeNoLocationClasses = false
+}
+
+task jacocoAll(dependsOn: [
+        'providers:api:jacocoTestReport',
+        'domain:jacocoTestReport',
+        'data:jacocoTestReportDebug',
+        'presentation:jacocoTestReportDebug',
+]) {
+    group = 'Reporting'
+    description = "Run all tests with code coverage"
+}
+
+task testAll(dependsOn: [
+        'providers:api:test',
+        'domain:test',
+        'data:testDebugUnitTest',
+        'presentation:testDebugUnitTest',
+]) {
+    group = 'Verification'
+    description = "Run all tests"
+}

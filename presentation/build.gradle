@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    def applicationConfig = rootProject.ext.applicationConfig
+
+    compileSdkVersion applicationConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion applicationConfig.minSdkVersion
+        targetSdkVersion applicationConfig.targetSdkVersion
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+            all {
+                jvmArgs '-noverify'
+            }
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext
+
+    // Core Product
+    implementation project(':domain')
+
+    // Core Language
+    implementation dependencies.kotlin.stdlib
+
+    // AndroidX Support
+    implementation dependencies.androidx.appcompat
+    implementation dependencies.androidx.recyclerview
+    implementation dependencies.androidx.supportDesign
+    implementation dependencies.androidx.constraintLayout
+
+    // AndroidX Lifecycle
+    api dependencies.androidxLifecycle.core
+    kapt dependencies.androidxLifecycle.compiler
+
+    // RX
+    implementation dependencies.rx.java
+    implementation dependencies.rx.kotlin
+
+    // Dependence injection
+    compileOnly dependencies.dagger.jsr250
+    implementation dependencies.dagger.core
+    implementation dependencies.dagger.android
+    kapt dependencies.dagger.compiler
+    kapt dependencies.dagger.androidCompiler
+
+    // Image download and cache
+    implementation dependencies.glide.core
+    kapt dependencies.glide.compiler
+
+    // Development and debugging
+    implementation dependencies.timber.core
+
+    // Unit Tests
+    testImplementation dependencies.testEngine.kotlinTest
+    testImplementation dependencies.testEngine.robolectric
+    testImplementation dependencies.mock.mockito
+    testImplementation dependencies.mock.mockitoKotlin
+}

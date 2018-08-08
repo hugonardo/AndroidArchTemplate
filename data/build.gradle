@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    def applicationConfig = rootProject.ext.applicationConfig
+
+    compileSdkVersion applicationConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion applicationConfig.minSdkVersion
+        targetSdkVersion applicationConfig.targetSdkVersion
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+            all {
+                jvmArgs '-noverify'
+            }
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext
+
+    // Core Product
+    implementation project(':domain')
+    implementation project(':providers:api')
+
+    // Core Language
+    implementation dependencies.kotlin.stdlib
+
+    // RX
+    implementation dependencies.rx.java
+    implementation dependencies.rx.kotlin
+
+    // Dependency Injection
+    compileOnly dependencies.dagger.jsr250
+    implementation dependencies.dagger.core
+    kapt dependencies.dagger.compiler
+
+    // Unit Tests
+    testImplementation dependencies.testEngine.kotlinTest
+    testImplementation dependencies.mock.mockito
+    testImplementation dependencies.mock.mockitoKotlin
+}

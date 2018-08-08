@@ -1,0 +1,28 @@
+ext {
+
+    def versionMajor = 0
+    def versionMinor = 0
+    def versionPatch = 0
+    def versionBuildNumber = System.getenv("BITRISE_BUILD_NUMBER") as Integer ?: 0
+
+    def getVersionCode = { ->
+        def code = versionBuildNumber
+        println "Version code is set to $code"
+        return code
+    }
+
+    def getVersionName = { ->
+        def versionName = "$versionMajor.$versionMinor.$versionPatch.$versionBuildNumber"
+        println "Version name is set to $versionName"
+        return versionName
+    }
+
+    applicationConfig = [
+            id               : "net.hugonardo.archtemplate",
+            compileSdkVersion: 28,
+            targetSdkVersion : 28,
+            minSdkVersion    : 19,
+            versionCode      : getVersionCode(),
+            versionName      : getVersionName(),
+    ]
+}

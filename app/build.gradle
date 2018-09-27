@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply from: rootProject.file('buildsystem/fabric.gradle')
+apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     def applicationConfig = rootProject.ext.applicationConfig

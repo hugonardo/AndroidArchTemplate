@@ -110,6 +110,11 @@ ext {
             plugin: "com.vanniktech:gradle-android-junit-jacoco-plugin:$vanniktechJacocoPluginVersion",
     ]
 
+    dexcountPluginVersion = "0.8.3"
+    dexcount = [
+            plugin: "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$dexcountPluginVersion",
+    ]
+
     // Mocks
     mockitoVersion = "2.22.0"
     mockitoKotlinVersion = "1.6.0"

@@ -3,7 +3,7 @@ ext {
     def versionMajor = 0
     def versionMinor = 0
     def versionPatch = 0
-    def versionBuildNumber = System.getenv("BITRISE_BUILD_NUMBER") as Integer ?: 0
+    def versionBuildNumber = System.getenv("BITRISE_BUILD_NUMBER") as Integer ?: 1
 
     def getVersionCode = { ->
         def code = versionBuildNumber

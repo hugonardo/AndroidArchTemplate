@@ -90,8 +90,8 @@ dependencies {
     implementation deps.kotlin.stdlib
 
     // AndroidX Support
-    implementation dependencies.androidx.multidex
-    implementation dependencies.androidx.appcompat
+    implementation deps.androidx.multidex
+    implementation deps.androidx.appcompat
 
     // Dependence injection
     compileOnly dependencies.dagger.jsr250

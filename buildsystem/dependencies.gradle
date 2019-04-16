@@ -82,14 +82,14 @@ deps.timber = [
         core: "com.jakewharton.timber:timber:$versions.timber",
 ]
 
+versions.leakCanary = "1.6.1"
+deps.leakCanary = [
+        core: "com.squareup.leakcanary:leakcanary-support-fragment:$versions.leakCanary",
+        noOp: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary",
+
+]
+
 ext {
-
-    leakCanaryVersion = "1.6.1"
-    leakCanary = [
-            core: "com.squareup.leakcanary:leakcanary-support-fragment:$leakCanaryVersion",
-            noOp: "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion",
-
-    ]
 
     // Fabric.io
     // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin

@@ -103,8 +103,8 @@ dependencies {
     // Development and debugging
     implementation deps.timber.core
     implementation deps.rx.logger
-    debugImplementation dependencies.leakCanary.core
-    releaseImplementation dependencies.leakCanary.noOp
+    debugImplementation deps.leakCanary.core
+    releaseImplementation deps.leakCanary.noOp
 
     // Unit Tests
     testImplementation deps.kotlin.test

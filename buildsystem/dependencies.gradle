@@ -105,6 +105,11 @@ deps.glide = [
         compiler: "com.github.bumptech.glide:compiler:$versions.glide",
 ]
 
+versions.dexcount = "0.8.6"
+deps.dexcount = [
+        plugin: "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$versions.dexcount",
+]
+
 versions.test = [:]
 deps.test = [:]
 
@@ -116,12 +121,6 @@ deps.test.coverage = [
 ]
 
 ext {
-
-    // https://github.com/KeepSafe/dexcount-gradle-plugin
-    dexcountPluginVersion = "0.8.6"
-    dexcount = [
-            plugin: "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$dexcountPluginVersion",
-    ]
 
     // Mocks
     mockitoVersion = "2.22.0"

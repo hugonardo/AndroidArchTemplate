@@ -9,13 +9,11 @@ buildscript {
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        def dependencies = rootProject.ext
-
         classpath deps.android.plugin
         classpath deps.kotlin.plugin
         classpath deps.fabric.plugin
         classpath deps.test.coverage.plugin
-        classpath dependencies.dexcount.plugin
+        classpath deps.dexcount.plugin
         classpath deps.gradleVersions.plugin
     }
 }

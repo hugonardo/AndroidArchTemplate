@@ -28,14 +28,13 @@ deps.androidx = [
         constraintLayout  : "com.android.support.constraint:constraint-layout:$versions.androidx.constraintLayout",
 ]
 
-ext {
+versions.androidx.lifecycle = "1.1.1"
+deps.androidx.lifecycle = [
+        core    : "android.arch.lifecycle:extensions:$versions.androidx.lifecycle",
+        compiler: "android.arch.lifecycle:compiler:$versions.androidx.lifecycle",
+]
 
-    // AndroidX Lifecycle
-    androidxLifecycleVersion = "1.1.1"
-    androidxLifecycle = [
-            core    : "android.arch.lifecycle:extensions:$androidxLifecycleVersion",
-            compiler: "android.arch.lifecycle:compiler:$androidxLifecycleVersion",
-    ]
+ext {
 
     // ReactiveX
     rxJavaVersion = "2.2.2"

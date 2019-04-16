@@ -51,8 +51,8 @@ dependencies {
     implementation deps.androidx.constraintLayout
 
     // AndroidX Lifecycle
-    api dependencies.androidxLifecycle.core
-    kapt dependencies.androidxLifecycle.compiler
+    api deps.androidx.lifecycle.core
+    kapt deps.androidx.lifecycle.compiler
 
     // RX
     implementation dependencies.rx.java

@@ -77,12 +77,12 @@ deps.okhttp = [
         restRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$versions.okhttp.retrofit",
 ]
 
-ext {
+versions.timber = "4.7.1"
+deps.timber = [
+        core: "com.jakewharton.timber:timber:$versions.timber",
+]
 
-    timberVersion = "4.7.1"
-    timber = [
-            core: "com.jakewharton.timber:timber:$timberVersion",
-    ]
+ext {
 
     leakCanaryVersion = "1.6.1"
     leakCanary = [

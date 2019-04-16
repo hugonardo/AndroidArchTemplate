@@ -101,7 +101,7 @@ dependencies {
     kapt deps.di.dagger.androidCompiler
 
     // Development and debugging
-    implementation dependencies.timber.core
+    implementation deps.timber.core
     implementation deps.rx.logger
     debugImplementation dependencies.leakCanary.core
     releaseImplementation dependencies.leakCanary.noOp

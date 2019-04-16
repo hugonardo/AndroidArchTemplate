@@ -70,7 +70,7 @@ dependencies {
     kapt dependencies.glide.compiler
 
     // Development and debugging
-    implementation dependencies.timber.core
+    implementation deps.timber.core
 
     // Unit Tests
     testImplementation deps.kotlin.test

@@ -59,11 +59,11 @@ dependencies {
     implementation deps.rx.kotlin
 
     // Dependence injection
-    compileOnly dependencies.dagger.jsr250
-    implementation dependencies.dagger.core
-    implementation dependencies.dagger.android
-    kapt dependencies.dagger.compiler
-    kapt dependencies.dagger.androidCompiler
+    compileOnly deps.di.dagger.jsr250
+    implementation deps.di.dagger.core
+    implementation deps.di.dagger.android
+    kapt deps.di.dagger.compiler
+    kapt deps.di.dagger.androidCompiler
 
     // Image download and cache
     implementation dependencies.glide.core

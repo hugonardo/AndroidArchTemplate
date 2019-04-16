@@ -46,18 +46,19 @@ deps.rx = [
         logger : "com.tspoon.traceur:traceur:$versions.rx.traceur",
 ]
 
-ext {
+versions.di = [:]
+deps.di = [:]
+versions.di.jsr250 = "1.0"
+versions.di.dagger = "2.16"
+deps.di.dagger = [
+        jsr250         : "javax.annotation:jsr250-api:$versions.di.jsr250",
+        core           : "com.google.dagger:dagger:$versions.di.dagger",
+        android        : "com.google.dagger:dagger-android-support:$versions.di.dagger",
+        compiler       : "com.google.dagger:dagger-compiler:$versions.di.dagger",
+        androidCompiler: "com.google.dagger:dagger-android-processor:$versions.di.dagger",
+]
 
-    // Dependency Injection
-    jsr250Version = "1.0"
-    daggerVersion = "2.16"
-    dagger = [
-            jsr250         : "javax.annotation:jsr250-api:$jsr250Version",
-            core           : "com.google.dagger:dagger:$daggerVersion",
-            android        : "com.google.dagger:dagger-android-support:$daggerVersion",
-            compiler       : "com.google.dagger:dagger-compiler:$daggerVersion",
-            androidCompiler: "com.google.dagger:dagger-android-processor:$daggerVersion",
-    ]
+ext {
 
     // JSON
     moshiVersion = "1.6.0"

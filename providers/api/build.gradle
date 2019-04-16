@@ -12,9 +12,9 @@ dependencies {
     implementation deps.rx.kotlin
 
     // Dependency Injection
-    compileOnly dependencies.dagger.jsr250
-    implementation dependencies.dagger.core
-    kapt dependencies.dagger.compiler
+    compileOnly deps.di.dagger.jsr250
+    implementation deps.di.dagger.core
+    kapt deps.di.dagger.compiler
 
     // JSON
     implementation dependencies.json.core

@@ -10,12 +10,12 @@ deps.kotlin = [
         test   : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
 ]
 
+versions.androidGradlePlugin = "3.3.2"
+deps.android = [
+        plugin: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+]
+
 ext {
-    // Android Project Config
-    androidGradlePluginVersion = "3.3.2"
-    android = [
-            plugin: "com.android.tools.build:gradle:$androidGradlePluginVersion",
-    ]
 
     // AndroidX Support
     androidxMultidexVersion = "1.0.3"

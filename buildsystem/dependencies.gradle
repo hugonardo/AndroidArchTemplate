@@ -66,18 +66,18 @@ deps.json.moshi = [
         compiler: "com.squareup.moshi:moshi-kotlin-codegen:$versions.json.moshi",
 ]
 
-ext {
+versions.okhttp = [:]
+versions.okhttp.client = "3.10.0"
+versions.okhttp.retrofit = "2.4.0"
+deps.okhttp = [
+        client           : "com.squareup.okhttp3:okhttp:$versions.okhttp.client",
+        logging          : "com.squareup.okhttp3:logging-interceptor:$versions.okhttp.client",
+        rest             : "com.squareup.retrofit2:retrofit:$versions.okhttp.retrofit",
+        restJsonConverter: "com.squareup.retrofit2:converter-moshi:$versions.okhttp.retrofit",
+        restRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$versions.okhttp.retrofit",
+]
 
-    // HTTP Networking
-    okhttpVersion = "3.10.0"
-    retrofitVersion = "2.4.0"
-    http = [
-            client           : "com.squareup.okhttp3:okhttp:$okhttpVersion",
-            logging          : "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
-            rest             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            restJsonConverter: "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
-            restRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
-    ]
+ext {
 
     timberVersion = "4.7.1"
     timber = [

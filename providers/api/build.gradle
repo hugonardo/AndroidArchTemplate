@@ -21,11 +21,11 @@ dependencies {
     kapt deps.json.moshi.compiler
 
     // Network API
-    implementation dependencies.http.client
-    implementation dependencies.http.logging
-    implementation dependencies.http.rest
-    implementation dependencies.http.restJsonConverter
-    implementation dependencies.http.restRxAdapter
+    implementation deps.okhttp.client
+    implementation deps.okhttp.logging
+    implementation deps.okhttp.rest
+    implementation deps.okhttp.restJsonConverter
+    implementation deps.okhttp.restRxAdapter
 
     // Unit Tests
     testImplementation deps.kotlin.test

@@ -2,23 +2,15 @@ ext.deps = [:]
 def versions = [:]
 def deps = [:]
 
-// Gradle Versions Plugin
-// https://github.com/ben-manes/gradle-versions-plugin
-versions.gradleVersionsPlugin = "0.21.0"
-deps.gradleVersions = [
-        plugin: "com.github.ben-manes:gradle-versions-plugin:$versions.gradleVersionsPlugin",
+versions.kotlin = "1.3.21"
+deps.kotlin = [
+        plugin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+        reflect: "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin",
+        test   : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
 ]
 
 ext {
-    // Core Language
-    kotlinVersion = "1.3.21"
-    kotlin = [
-            plugin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
-            stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
-            reflect: "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
-            test   : "org.jetbrains.kotlin:kotlin-test-junit$kotlinVersion",
-    ]
-
     // Android Project Config
     androidGradlePluginVersion = "3.3.2"
     android = [
@@ -157,6 +149,13 @@ ext {
             espressoCore: "com.android.support.test.espresso:espresso-core:$espressoVersion",
     ]
 }
+
+// Gradle Versions Plugin
+// https://github.com/ben-manes/gradle-versions-plugin
+versions.gradleVersionsPlugin = "0.21.0"
+deps.gradleVersions = [
+        plugin: "com.github.ben-manes:gradle-versions-plugin:$versions.gradleVersionsPlugin",
+]
 
 ext.deps = deps
 ext.versions = versions

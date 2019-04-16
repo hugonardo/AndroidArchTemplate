@@ -38,7 +38,7 @@ dependencies {
     implementation project(':providers:api')
 
     // Core Language
-    implementation dependencies.kotlin.stdlib
+    implementation deps.kotlin.stdlib
 
     // RX
     implementation dependencies.rx.java
@@ -50,6 +50,7 @@ dependencies {
     kapt dependencies.dagger.compiler
 
     // Unit Tests
+    testImplementation deps.kotlin.test
     testImplementation dependencies.testEngine.kotlinTest
     testImplementation dependencies.mock.mockito
     testImplementation dependencies.mock.mockitoKotlin

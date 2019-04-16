@@ -87,7 +87,7 @@ dependencies {
     implementation project(":providers:api")
 
     // Core Language
-    implementation dependencies.kotlin.stdlib
+    implementation deps.kotlin.stdlib
 
     // AndroidX Support
     implementation dependencies.androidx.multidex
@@ -107,6 +107,7 @@ dependencies {
     releaseImplementation dependencies.leakCanary.noOp
 
     // Unit Tests
+    testImplementation deps.kotlin.test
     testImplementation dependencies.testEngine.kotlinTest
     testImplementation dependencies.mock.mockito
     testImplementation dependencies.mock.mockitoKotlin

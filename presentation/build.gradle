@@ -42,7 +42,7 @@ dependencies {
     implementation project(':domain')
 
     // Core Language
-    implementation dependencies.kotlin.stdlib
+    implementation deps.kotlin.stdlib
 
     // AndroidX Support
     implementation dependencies.androidx.appcompat
@@ -73,6 +73,7 @@ dependencies {
     implementation dependencies.timber.core
 
     // Unit Tests
+    testImplementation deps.kotlin.test
     testImplementation dependencies.testEngine.kotlinTest
     testImplementation dependencies.testEngine.robolectric
     testImplementation dependencies.mock.mockito

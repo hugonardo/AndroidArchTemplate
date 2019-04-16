@@ -5,7 +5,7 @@ dependencies {
     def dependencies = rootProject.ext
 
     // Core Language
-    implementation dependencies.kotlin.stdlib
+    implementation deps.kotlin.stdlib
 
     // RX
     implementation dependencies.rx.java
@@ -28,6 +28,7 @@ dependencies {
     implementation dependencies.http.restRxAdapter
 
     // Unit Tests
+    testImplementation deps.kotlin.test
     testImplementation dependencies.testEngine.kotlinTest
     testImplementation dependencies.mock.mockito
     testImplementation dependencies.mock.mockitoKotlin

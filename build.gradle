@@ -12,7 +12,7 @@ buildscript {
         def dependencies = rootProject.ext
 
         classpath dependencies.android.plugin
-        classpath dependencies.kotlin.plugin
+        classpath deps.kotlin.plugin
         classpath dependencies.fabric.plugin
         classpath dependencies.jacoco.plugin
         classpath dependencies.dexcount.plugin

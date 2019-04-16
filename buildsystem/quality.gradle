@@ -1,7 +1,7 @@
 apply plugin: "com.vanniktech.android.junit.jacoco"
 
 junitJacoco {
-    jacocoVersion = rootProject.ext.jacocoVersion
+    jacocoVersion = versions.test.coverage.jacoco
     includeNoLocationClasses = false
 }
 

@@ -1,7 +1,7 @@
 apply plugin: 'io.fabric'
 
 dependencies {
-    implementation(rootProject.ext.fabric.crashlytics) { transitive = true }
+    implementation(deps.fabric.crashlytics) { transitive = true }
 }
 
 def getFabricApiKey = { ->

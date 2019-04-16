@@ -89,17 +89,16 @@ deps.leakCanary = [
 
 ]
 
+versions.fabric = [:]
+versions.fabric.plugin = "1.28.1"
+versions.fabric.crashlytics = "2.9.5"
+deps.fabric = [
+        plugin     : "io.fabric.tools:gradle:$versions.fabric.plugin",
+        crashlytics: "com.crashlytics.sdk.android:crashlytics:$versions.fabric.crashlytics@aar",
+
+]
+
 ext {
-
-    // Fabric.io
-    // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
-    fabricGradlePluginVersion = "1.28.1"
-    fabricCrashlyticsVersion = "2.9.5"
-    fabric = [
-            plugin     : "io.fabric.tools:gradle:$fabricGradlePluginVersion",
-            crashlytics: "com.crashlytics.sdk.android:crashlytics:$fabricCrashlyticsVersion@aar",
-
-    ]
 
     // Image download and cache
     glideVersion = "4.8.0"

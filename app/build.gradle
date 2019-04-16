@@ -102,7 +102,7 @@ dependencies {
 
     // Development and debugging
     implementation dependencies.timber.core
-    implementation dependencies.rx.logger
+    implementation deps.rx.logger
     debugImplementation dependencies.leakCanary.core
     releaseImplementation dependencies.leakCanary.noOp
 

@@ -8,8 +8,8 @@ dependencies {
     implementation deps.kotlin.stdlib
 
     // RX
-    implementation dependencies.rx.java
-    implementation dependencies.rx.kotlin
+    implementation deps.rx.java
+    implementation deps.rx.kotlin
 
     // Dependency Injection
     compileOnly dependencies.dagger.jsr250

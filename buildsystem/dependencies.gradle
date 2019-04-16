@@ -34,19 +34,19 @@ deps.androidx.lifecycle = [
         compiler: "android.arch.lifecycle:compiler:$versions.androidx.lifecycle",
 ]
 
-ext {
+versions.rx = [:]
+versions.rx.java = "2.2.2"
+versions.rx.kotlin = "2.2.0"
+versions.rx.android = "2.1.0"
+versions.rx.traceur = "1.0.1"
+deps.rx = [
+        java   : "io.reactivex.rxjava2:rxjava:$versions.rx.java",
+        kotlin : "io.reactivex.rxjava2:rxkotlin:$versions.rx.kotlin",
+        android: "io.reactivex.rxjava2:rxandroid:$versions.rx.android",
+        logger : "com.tspoon.traceur:traceur:$versions.rx.traceur",
+]
 
-    // ReactiveX
-    rxJavaVersion = "2.2.2"
-    rxKotlinVersion = "2.2.0"
-    rxAndroidVersion = "2.1.0"
-    rxTraceurVersion = "1.0.1"
-    rx = [
-            java   : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-            kotlin : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
-            android: "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            logger : "com.tspoon.traceur:traceur:$rxTraceurVersion",
-    ]
+ext {
 
     // Dependency Injection
     jsr250Version = "1.0"

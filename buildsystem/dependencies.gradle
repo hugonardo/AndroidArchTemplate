@@ -58,14 +58,15 @@ deps.di.dagger = [
         androidCompiler: "com.google.dagger:dagger-android-processor:$versions.di.dagger",
 ]
 
-ext {
+versions.json = [:]
+deps.json = [:]
+versions.json.moshi = "1.6.0"
+deps.json.moshi = [
+        core    : "com.squareup.moshi:moshi:$versions.json.moshi",
+        compiler: "com.squareup.moshi:moshi-kotlin-codegen:$versions.json.moshi",
+]
 
-    // JSON
-    moshiVersion = "1.6.0"
-    json = [
-            core    : "com.squareup.moshi:moshi:$moshiVersion",
-            compiler: "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion",
-    ]
+ext {
 
     // HTTP Networking
     okhttpVersion = "3.10.0"

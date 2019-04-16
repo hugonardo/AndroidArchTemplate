@@ -17,8 +17,8 @@ dependencies {
     kapt deps.di.dagger.compiler
 
     // JSON
-    implementation dependencies.json.core
-    kapt dependencies.json.compiler
+    implementation deps.json.moshi.core
+    kapt deps.json.moshi.compiler
 
     // Network API
     implementation dependencies.http.client

@@ -52,6 +52,5 @@ dependencies {
     // Unit Tests
     testImplementation deps.kotlin.test
     testImplementation dependencies.testEngine.kotlinTest
-    testImplementation dependencies.mock.mockito
-    testImplementation dependencies.mock.mockitoKotlin
+    testImplementation deps.test.mock.mockk
 }

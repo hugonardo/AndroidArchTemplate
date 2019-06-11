@@ -10,7 +10,7 @@ deps.kotlin = [
         test   : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
 ]
 
-versions.androidGradlePlugin = "3.3.2"
+versions.androidGradlePlugin = "3.4.1"
 deps.android = [
         plugin: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
 ]

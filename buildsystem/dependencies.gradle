@@ -70,7 +70,7 @@ deps.json.moshi = [
 ]
 
 versions.okhttp = [:]
-versions.okhttp.client = "3.10.0"
+versions.okhttp.client = "3.14.2"
 versions.okhttp.retrofit = "2.4.0"
 deps.okhttp = [
         client           : "com.squareup.okhttp3:okhttp:${versions.okhttp.client}",
@@ -125,7 +125,7 @@ deps.test.coverage = [
 
 versions.test.mock = [:]
 versions.test.mock.mockk = "1.9"
-versions.test.mock.webserver = "3.8.0"
+versions.test.mock.webserver = versions.okhttp.client
 deps.test.mock = [
         mockk    : "io.mockk:mockk:${versions.test.mock.mockk}",
         webServer: "com.squareup.okhttp3:mockwebserver:${versions.test.mock.webserver}",

@@ -156,3 +156,14 @@ deps.gradleVersions = [
 
 ext.deps = deps
 ext.versions = versions
+
+static def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.mavenCentral()
+    handler.flatDir { dirs 'libs' }
+    handler.maven { url 'https://maven.fabric.io/public' }
+    handler.maven { url "https://jitpack.io" }
+}
+
+ext.addRepos = this.&addRepos

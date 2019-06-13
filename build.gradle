@@ -2,12 +2,8 @@ buildscript {
     apply from: rootProject.file("buildsystem/dependencies.gradle")
     apply from: rootProject.file("buildsystem/environment.gradle")
 
-    repositories {
-        jcenter()
-        google()
-        mavenCentral()
-        maven { url 'https://maven.fabric.io/public' }
-    }
+    addRepos(repositories)
+
     dependencies {
         classpath deps.android.plugin
         classpath deps.kotlin.plugin
@@ -19,12 +15,7 @@ buildscript {
 }
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
-        maven { url 'https://maven.fabric.io/public' }
-    }
+    addRepos(repositories)
 }
 
 task clean(type: Delete) {

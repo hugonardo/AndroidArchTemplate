@@ -39,7 +39,7 @@ deps.androidx.lifecycle = [
 
 versions.rx = [:]
 versions.rx.java = "2.2.9"
-versions.rx.kotlin = "2.2.0"
+versions.rx.kotlin = "2.3.0"
 versions.rx.android = "2.1.0"
 versions.rx.traceur = "1.0.1"
 deps.rx = [

@@ -93,7 +93,7 @@ deps.leakCanary = [
 ]
 
 versions.fabric = [:]
-versions.fabric.plugin = "1.28.1"
+versions.fabric.plugin = "1.29.0"
 versions.fabric.crashlytics = "2.9.5"
 deps.fabric = [
         plugin     : "io.fabric.tools:gradle:${versions.fabric.plugin}",

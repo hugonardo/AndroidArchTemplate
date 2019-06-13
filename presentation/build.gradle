@@ -43,9 +43,9 @@ dependencies {
     implementation deps.kotlin.stdlib
 
     // AndroidX Support
-    implementation deps.androidx.appcompat
-    implementation deps.androidx.recyclerview
-    implementation deps.androidx.supportDesign
+    implementation deps.androidx.appCompat
+    implementation deps.androidx.recyclerView
+    implementation deps.androidx.materialDesign
     implementation deps.androidx.constraintLayout
 
     // AndroidX Lifecycle

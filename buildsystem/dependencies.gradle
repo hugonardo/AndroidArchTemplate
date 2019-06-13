@@ -16,22 +16,25 @@ deps.android = [
 ]
 
 versions.androidx = [:]
-versions.androidx.multidex = "1.0.3"
-versions.androidx.support = "28.0.0"
-versions.androidx.constraintLayout = "1.1.2"
+versions.androidx.multidex = "2.0.1"
+versions.androidx.appCompat = "1.0.2"
+versions.androidx.recyclerView = "1.0.0"
+versions.androidx.annotation = "1.0.0"
+versions.androidx.materialDesign = "1.0.0"
+versions.androidx.constraintLayout = "1.1.3"
 deps.androidx = [
-        multidex          : "com.android.support:multidex:${versions.androidx.multidex}",
-        appcompat         : "com.android.support:appcompat-v7:${versions.androidx.support}",
-        recyclerview      : "com.android.support:recyclerview-v7:${versions.androidx.support}",
-        supportAnnotations: "com.android.support:support-annotations:${versions.androidx.support}",
-        supportDesign     : "com.android.support:design:${versions.androidx.support}",
-        constraintLayout  : "com.android.support.constraint:constraint-layout:${versions.androidx.constraintLayout}",
+        multidex          : "androidx.multidex:multidex:${versions.androidx.multidex}",
+        appCompat         : "androidx.appcompat:appcompat:${versions.androidx.appCompat}",
+        recyclerView      : "androidx.recyclerview:recyclerview:${versions.androidx.recyclerView}",
+        supportAnnotations: "androidx.annotation:annotation:${versions.androidx.annotation}",
+        materialDesign     : "com.google.android.material:material:${versions.androidx.materialDesign}",
+        constraintLayout  : "androidx.constraintlayout:constraintlayout:${versions.androidx.constraintLayout}",
 ]
 
-versions.androidx.lifecycle = "1.1.1"
+versions.androidx.lifecycle = "2.0.0"
 deps.androidx.lifecycle = [
-        core    : "android.arch.lifecycle:extensions:${versions.androidx.lifecycle}",
-        compiler: "android.arch.lifecycle:compiler:${versions.androidx.lifecycle}",
+        core    : "androidx.lifecycle:lifecycle-extensions:${versions.androidx.lifecycle}",
+        compiler: "androidx.lifecycle:lifecycle-compiler:${versions.androidx.lifecycle}",
 ]
 
 versions.rx = [:]

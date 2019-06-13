@@ -89,7 +89,7 @@ dependencies {
 
     // AndroidX Support
     implementation deps.androidx.multidex
-    implementation deps.androidx.appcompat
+    implementation deps.androidx.appCompat
 
     // Dependence injection
     compileOnly deps.di.dagger.jsr250

@@ -137,18 +137,15 @@ deps.test.runner = [
         robolectric: "org.robolectric:robolectric:${versions.test.runner.robolectric}",
 ]
 
-ext {
-
-    // Testing
-    runnerVersion = "1.0.2"
-    rulesVersion = "1.0.2"
-    espressoVersion = "3.0.2"
-    testLibraries = [
-            runner      : "com.android.support.test:runner:$runnerVersion",
-            rules       : "com.android.support.test:rules:$rulesVersion",
-            espressoCore: "com.android.support.test.espresso:espresso-core:$espressoVersion",
-    ]
-}
+versions.test.android = [:]
+versions.test.android.runner = "1.0.2"
+versions.test.android.rules = "1.0.2"
+versions.test.android.espresso = "3.0.2"
+deps.test.android = [
+        runner  : "com.android.support.test:runner:${versions.test.android.runner}",
+        rules   : "com.android.support.test:rules:${versions.test.android.rules}",
+        espresso: "com.android.support.test.espresso:espresso-core:${versions.test.android.espresso}",
+]
 
 // Gradle Versions Plugin
 // https://github.com/ben-manes/gradle-versions-plugin

@@ -63,7 +63,7 @@ deps.di.dagger = [
 
 versions.json = [:]
 deps.json = [:]
-versions.json.moshi = "1.6.0"
+versions.json.moshi = "1.8.0"
 deps.json.moshi = [
         core    : "com.squareup.moshi:moshi:${versions.json.moshi}",
         compiler: "com.squareup.moshi:moshi-kotlin-codegen:${versions.json.moshi}",

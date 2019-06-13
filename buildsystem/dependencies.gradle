@@ -124,7 +124,7 @@ deps.test.coverage = [
 ]
 
 versions.test.mock = [:]
-versions.test.mock.mockk = "1.9"
+versions.test.mock.mockk = "1.9.3"
 versions.test.mock.webserver = versions.okhttp.client
 deps.test.mock = [
         mockk    : "io.mockk:mockk:${versions.test.mock.mockk}",

@@ -133,7 +133,7 @@ deps.test.mock = [
 
 versions.test.runner = [:]
 versions.test.runner.kotlinTest = "3.1.10"
-versions.test.runner.robolectric = "3.8"
+versions.test.runner.robolectric = "4.3"
 deps.test.runner = [
         junit      : "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
         kotlinTest : "io.kotlintest:kotlintest-runner-junit5:${versions.test.runner.kotlinTest}",

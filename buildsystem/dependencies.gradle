@@ -128,14 +128,16 @@ deps.test.mock = [
         webServer: "com.squareup.okhttp3:mockwebserver:${versions.test.mock.webserver}",
 ]
 
+versions.test.runner = [:]
+versions.test.runner.kotlinTest = "3.1.10"
+versions.test.runner.robolectric = "3.8"
+deps.test.runner = [
+        junit      : "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
+        kotlinTest : "io.kotlintest:kotlintest-runner-junit5:${versions.test.runner.kotlinTest}",
+        robolectric: "org.robolectric:robolectric:${versions.test.runner.robolectric}",
+]
+
 ext {
-    // Unit Test Engine
-    robolectricVersion = "3.8"
-    kotlinTestVersion = "3.1.10"
-    testEngine = [
-            kotlinTest : "io.kotlintest:kotlintest-runner-junit5:$kotlinTestVersion",
-            robolectric: "org.robolectric:robolectric:$robolectricVersion",
-    ]
 
     // Testing
     runnerVersion = "1.0.2"

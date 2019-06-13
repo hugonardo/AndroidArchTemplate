@@ -31,8 +31,6 @@ android {
 }
 
 dependencies {
-    def dependencies = rootProject.ext
-
     // Core Product
     implementation project(':domain')
     implementation project(':providers:api')
@@ -51,6 +49,6 @@ dependencies {
 
     // Unit Tests
     testImplementation deps.kotlin.test
-    testImplementation dependencies.testEngine.kotlinTest
+    testImplementation deps.test.runner.kotlinTest
     testImplementation deps.test.mock.mockk
 }

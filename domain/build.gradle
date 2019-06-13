@@ -2,8 +2,6 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-kapt'
 
 dependencies {
-    def dependencies = rootProject.ext
-
     // Core Language
     implementation deps.kotlin.stdlib
 
@@ -18,6 +16,6 @@ dependencies {
 
     // Unit Tests
     testImplementation deps.kotlin.test
-    testImplementation dependencies.testEngine.kotlinTest
+    testImplementation deps.test.runner.kotlinTest
     testImplementation deps.test.mock.mockk
 }

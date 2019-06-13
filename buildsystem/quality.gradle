@@ -6,7 +6,7 @@ junitJacoco {
 }
 
 task jacocoAll(dependsOn: [
-        'providers:api:jacocoTestReport',
+        'api:jacocoTestReport',
         'domain:jacocoTestReport',
         'data:jacocoTestReportDebug',
         'presentation:jacocoTestReportDebug',
@@ -16,7 +16,7 @@ task jacocoAll(dependsOn: [
 }
 
 task testAll(dependsOn: [
-        'providers:api:test',
+        'api:test',
         'domain:test',
         'data:testDebugUnitTest',
         'presentation:testDebugUnitTest',

@@ -33,7 +33,7 @@ android {
 dependencies {
     // Core Product
     implementation project(':domain')
-    implementation project(':providers:api')
+    implementation project(':api')
 
     // Core Language
     implementation deps.kotlin.stdlib
